@@ -69,7 +69,8 @@ export class AppComponent implements OnInit {
     });
 
     const index = this.channels.indexOf(this.assetForm.controls.channels.value)
-    this.channels = this.channels.splice(index, 1)
+    console.log("jkk",this.channels)
+    this.channels.splice(index, 1)
     console.log(this.channels)
   }
 
