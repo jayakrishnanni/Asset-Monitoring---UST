@@ -32,10 +32,10 @@ export class AppComponent implements OnInit {
   dataLoggerInterface = ['Analog', 'Digital'];
 
   dataLoggerModelwithAnalogDigital: object = {
-    DL100: { Analog: ['C1', 'C2','C3','C4','C5'], Digital: ['D1', 'D2'] },
-    DL200: { Analog: ['C1', 'C2'], Digital: ['D1', 'D2'] },
-    DL300: { Analog: ['C1', 'C2'], Digital: ['D1', 'D2'] },
-    DL400: { Analog: ['C1', 'C2'], Digital: ['D1', 'D2'] },
+    DL100: { Analog: ['C1', 'C2','C3','C4','C5'], Digital: ['C6', 'C7','C8','C9','C10'] },
+    DL200: { Analog: ["A1",'A2','A3','A4','A5'], Digital: ["A6",'A7'] },
+    DL300: { Analog: ['D1','D2','D3'], Digital: ['C6', 'C7','C8','C9','C10'] },
+    DL400: { Analog: ['G11', 'G12'], Digital: ['K1', 'K3'] },
   };
 
   ngOnInit(): void {
@@ -45,17 +45,12 @@ export class AppComponent implements OnInit {
       assetAttributes: new FormControl('Oil Temperature', Validators.required),
       dataLoggerModel: new FormControl('DL100', Validators.required),
       dataLoggerInterface: new FormControl('Analog', Validators.required),
-      //dataLoggerModelwithAnalogDigital: new FormControl ('Analog: C1-C5', Validators.required),
       channels: new FormControl(''),
     });
     this.channels =
       this.dataLoggerModelwithAnalogDigital[
         this.assetForm.controls.dataLoggerModel.value
       ][this.assetForm.controls.dataLoggerInterface.value];
-
-
-      // this.assetForm.controls.channels.setValue(this.channels[0]);
-      // this.assetForm.controls.assetAttributes.setValue(this.assetAttributes[0]);
   }
 
   click(): void {
