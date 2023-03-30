@@ -3,7 +3,6 @@
   <select
     id="assetTypes"
     formControlName="assetTypes"
-    [value]="dataLogerVaslue"
   >
     <option *ngFor="let assetType of assetTypes">{{ assetType }}</option>
   </select>
@@ -33,12 +32,12 @@
   <h4>Select Channel </h4>
 
   <select id="channels" formControlName="channels">
-    <option *ngFor="let channel of channels">{{ channel }}</option>
+    <option *ngFor="let channel of channels" [ngValue]="channel">{{ channel }}</option>
   </select>
 
   <br />
   <br />
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="!assetForm.valid">Submit</button>
 </form>
 <br>
 <br>

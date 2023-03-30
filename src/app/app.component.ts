@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   assetFormArray: any[];
   assetMonitorTable: any[];
   channels = [];
+disable: boolean;
   constructor(private fb: FormBuilder) {}
   assetTypes = ['Generator', 'Compressor', 'Fressor'];
 
@@ -56,7 +57,9 @@ export class AppComponent implements OnInit {
   }
 
   click(): void {
+    this.disable = true;
     this.assetFormArray.push(this.assetForm.value);
+    
     // this.assetMonitorTable = this.assetFormArray.filter((obj, index) => {
     //   return (
     //     index ===
