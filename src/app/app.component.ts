@@ -47,6 +47,11 @@ export class AppComponent implements OnInit {
       dataLoggerInterface: new FormControl('Analog', Validators.required),
       channels: new FormControl('', Validators.required),
     });
+
+    this.channels =
+    this.dataLoggerModelwithAnalogDigital[
+      this.assetForm.controls.dataLoggerModel.value
+    ][this.assetForm.controls.dataLoggerInterface.value];
     
   }
 
@@ -76,13 +81,6 @@ export class AppComponent implements OnInit {
       this.dataLoggerModelwithAnalogDigital[
         this.assetForm.controls.dataLoggerModel.value
       ][event.target.value];
-  }
-
-  ngOnChange(change: SimpleChange) {
-    this.channels =
-    this.dataLoggerModelwithAnalogDigital[
-      this.assetForm.controls.dataLoggerModel.value
-    ][this.assetForm.controls.dataLoggerInterface.value];
   }
 
  
