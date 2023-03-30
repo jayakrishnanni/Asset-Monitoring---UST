@@ -32,7 +32,7 @@
 
   <h4>Select Channel </h4>
 
-  <select id="channels" formControlName="channels" (change)="removeSelectedChannel($event)">
+  <select id="channels" formControlName="channels">
     <option *ngFor="let channel of channels">{{ channel }}</option>
   </select>
 

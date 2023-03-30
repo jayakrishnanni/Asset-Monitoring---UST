@@ -67,8 +67,10 @@ export class AppComponent implements OnInit {
         )
       );
     });
-    console.log(this.assetFormArray);
-    console.log(this.assetMonitorTable);
+
+    const index = this.channels.indexOf(this.assetForm.controls.channels.value)
+    this.channels = this.channels.splice(index, 1)
+    console.log(this.channels)
   }
 
   getChannels(event: any) {
@@ -78,7 +80,5 @@ export class AppComponent implements OnInit {
       ][event.target.value];
   }
 
-  removeSelectedChannel(event: any) {
-    console.log(event.target.value)
-  }
+ 
 }
