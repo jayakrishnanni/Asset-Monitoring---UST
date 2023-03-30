@@ -50,13 +50,15 @@
      <td>Asset Types</td>
      <td>Attribute</td>
      <td>Logger Model</td>
-     <td>Interface with Channel</td>
+     <td>Interface </td>
+     <td>Channels </td>
   </tr>
   
-  <tr *ngFor = "let assetMonitorTable of assetMonitorTable">
+  <tr *ngFor = "let assetMonitorTable of assetFormArray">
      <td>{{assetMonitorTable.assetTypes}}</td>
      <td>{{assetMonitorTable.assetAttributes}}</td>
      <td>{{assetMonitorTable.dataLoggerModel}}</td>
-     <td>{{assetMonitorTable.dataLoggerModelwithAnalogDigital}}</td>
+     <td>{{assetMonitorTable.dataLoggerInterface}}</td>
+     <td>{{assetMonitorTable.channels}}</td>
   </tr>
 </table>

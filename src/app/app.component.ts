@@ -52,26 +52,31 @@ export class AppComponent implements OnInit {
       this.dataLoggerModelwithAnalogDigital[
         this.assetForm.controls.dataLoggerModel.value
       ][this.assetForm.controls.dataLoggerInterface.value];
+
+
+      // this.assetForm.controls.channels.setValue(this.channels[0]);
+      // this.assetForm.controls.assetAttributes.setValue(this.assetAttributes[0]);
   }
 
   click(): void {
     this.assetFormArray.push(this.assetForm.value);
-    this.assetMonitorTable = this.assetFormArray.filter((obj, index) => {
-      return (
-        index ===
-        this.assetFormArray.findIndex(
-          (o) =>
-            obj.assetAttributes === o.assetAttributes &&
-            obj.dataLoggerModelwithAnalogDigital ===
-              o.dataLoggerModelwithAnalogDigital
-        )
-      );
-    });
+    // this.assetMonitorTable = this.assetFormArray.filter((obj, index) => {
+    //   return (
+    //     index ===
+    //     this.assetFormArray.findIndex(
+    //       (o) =>
+    //         obj.assetAttributes === o.assetAttributes &&
+    //         obj.dataLoggerModelwithAnalogDigital ===
+    //           o.dataLoggerModelwithAnalogDigital
+    //     )
+    //   );
+    // });
 
-    const index = this.channels.indexOf(this.assetForm.controls.channels.value)
-    console.log("jkk",this.channels)
-    this.channels.splice(index, 1)
-    console.log(this.channels)
+    const index = this.channels.indexOf(this.assetForm.controls.channels.value);
+    this.channels.splice(index, 1);
+
+    const indexAttribute =   this.assetAttributes.indexOf(this.assetForm.controls.assetAttributes.value);
+    this.assetAttributes.splice(indexAttribute, 1);
   }
 
   getChannels(event: any) {
