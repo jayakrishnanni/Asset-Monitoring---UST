@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       assetAttributes: new FormControl('Oil Temperature', Validators.required),
       dataLoggerModel: new FormControl('DL100', Validators.required),
       dataLoggerInterface: new FormControl('Analog', Validators.required),
-      channels: new FormControl(''),
+      channels: new FormControl('', Validators.required),
     });
     this.channels =
       this.dataLoggerModelwithAnalogDigital[
