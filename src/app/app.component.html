@@ -22,11 +22,20 @@
     </option>
   </select>
 
-  <h4>Select Data Logger with Channel and </h4>
+  <h4>Select Data Interface</h4>
 
-  <select id="dataLoggerModelwithAnalogDigital" formControlName="dataLoggerModelwithAnalogDigital">
-    <option *ngFor="let dataLoggerModelwithAnalogDigital of dataLoggerModelwithAnalogDigital">{{ dataLoggerModelwithAnalogDigital }}</option>
+  <select id="dataLoggerInterface"  formControlName="dataLoggerInterface" (change)="getChannels($event)">
+    <option *ngFor="let dataLoggerInterface of dataLoggerInterface">
+      {{ dataLoggerInterface }}
+    </option>
   </select>
+
+  <h4>Select Channel </h4>
+
+  <select id="channels" formControlName="channels" (change)= "removeSelectedChannel($event)">
+    <option *ngFor="let channel of channels">{{ channel }}</option>
+  </select>
+
   <br />
   <br />
   <button type="submit">Submit</button>
