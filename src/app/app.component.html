@@ -1,0 +1,53 @@
+<form [formGroup]="assetForm" id="assetForm" (ngSubmit)="click()">
+  <h4>Select Asset Types</h4>
+  <select
+    id="assetTypes"
+    formControlName="assetTypes"
+    [value]="dataLogerVaslue"
+  >
+    <option *ngFor="let assetType of assetTypes">{{ assetType }}</option>
+  </select>
+  <h4>Select Asset Attributes</h4>
+  <select id="assetAttributes" formControlName="assetAttributes">
+    <option *ngFor="let assetAttribute of assetAttributes">
+      {{ assetAttribute }}
+    </option>
+  </select>
+
+  <h4>Select Data Logger</h4>
+
+  <select id="dataLoggerModel"  formControlName="dataLoggerModel">
+    <option *ngFor="let dataLoggerModel of dataLoggerModel">
+      {{ dataLoggerModel }}
+    </option>
+  </select>
+
+  <h4>Select Data Logger with Analog Digital Combination</h4>
+
+  <select id="dataLoggerModelwithAnalogDigital" formControlName="dataLoggerModelwithAnalogDigital">
+    <option *ngFor="let dataLoggerModelwithAnalogDigital of dataLoggerModelwithAnalogDigital">{{ dataLoggerModelwithAnalogDigital }}</option>
+  </select>
+  <br />
+  <br />
+  <button type="submit">Submit</button>
+</form>
+<br>
+<br>
+
+<h3>Asset Monitoring</h3>
+<p>Channel or attribute configured should be removed from channel and attribute list</p>
+<table border="1">
+  <tr style="text-decoration: bold">
+     <td>Asset Types</td>
+     <td>Attribute</td>
+     <td>Logger Model</td>
+     <td>Interface with Channel</td>
+  </tr>
+  
+  <tr *ngFor = "let assetMonitorTable of assetMonitorTable">
+     <td>{{assetMonitorTable.assetTypes}}</td>
+     <td>{{assetMonitorTable.assetAttributes}}</td>
+     <td>{{assetMonitorTable.dataLoggerModel}}</td>
+     <td>{{assetMonitorTable.dataLoggerModelwithAnalogDigital}}</td>
+  </tr>
+</table>
